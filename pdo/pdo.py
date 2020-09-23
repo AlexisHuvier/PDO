@@ -6,6 +6,7 @@ class PDO:
     requirements = {
         "sqlite": ("db",),
         "mysql": ("host", "user", "passwd", "db"),
+        "postgresql": ("host", "user", "passwd", "db")
     }
 
     def __init__(self, raw_connection):
@@ -25,6 +26,10 @@ class PDO:
                     from pdo.databases.mysql_database import MySQLDatabase
 
                     self.db = MySQLDatabase(connection_infos)
+                elif self.module == "postgresql":
+                    from pdo.databases.postgresql_database import PostgreSQLDatabase
+
+                    self.db = PostgreSQLDatabase(connection_infos)
             else:
                 raise PDOConnectionException("Unknown 'module' argument in connection string")
         else:
