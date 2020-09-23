@@ -4,7 +4,8 @@ from pdo.exception import PDOException, PDOConnectionException
 
 class PDO:
     requirements = {
-        "sqlite": ("db",)
+        "sqlite": ("db",),
+        "mysql": ("host", "user", "passwd", "db"),
     }
 
     def __init__(self, raw_connection):
@@ -20,6 +21,10 @@ class PDO:
                     from pdo.databases.sqlite_database import SQLiteDatabase
 
                     self.db = SQLiteDatabase(connection_infos)
+                elif self.module == "mysql":
+                    from pdo.databases.mysql_database import MySQLDatabase
+
+                    self.db = MySQLDatabase(connection_infos)
             else:
                 raise PDOConnectionException("Unknown 'module' argument in connection string")
         else:
