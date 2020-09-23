@@ -11,6 +11,8 @@ setup(
     author_email='lavapower84@gmail.com',
     license='GNU GPLv3',
     packages=find_packages(),
+    long_description_content_type="text/markdown",
+    long_description=open('README.md').read(),
     install_requires=[],
     include_package_data=True,
 
