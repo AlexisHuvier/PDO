@@ -3,7 +3,7 @@ from setuptools import setup, find_packages
 import pdo
 
 setup(
-    name='PDO',
+    name='pdo-pip',
     version=pdo.__version__,
     description='An interface to access a database from Python.',
     url='https://github.com/AlexisHuvier/PDO',
