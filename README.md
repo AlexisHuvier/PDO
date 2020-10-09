@@ -19,7 +19,11 @@ See examples in examples directory.
 
 ## Changelog
 
-### V 1.1.0 : 24 Sept 2020 (LATEST)
+### V 1.1.1 : 09 Oct 2020 (LATEST)
+
+- Fix SQLite Database
+
+### V 1.1.0 : 24 Sept 2020
 
 - Add support of SQLite
 - Add support of MySQL
