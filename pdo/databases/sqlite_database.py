@@ -17,6 +17,7 @@ class SQLiteDatabase:
                 self.cursor.execute(query)
             else:
                 self.cursor.execute(query, tuples)
+            self.cursor.commit()
         except sqlite3.Error as e:
             error = str(e)
         if error is not None:
